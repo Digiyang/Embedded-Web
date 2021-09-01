@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+<style>
+body { background-color:#2F4F4F ;}
+button {
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+		margin: 4px 2px;
+		cursor: pointer;
+}
+
+.button1 {
+	background-color: #2F4F4F;
+	color: black;
+	border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+	background-color: #4CAF50;
+	color: white;
+}
+
+.button2 {
+	background-color: #2F4F4F;
+	color: black;
+	border: 2px solid #FF0000;
+}
+
+.button2:hover {
+	background-color: #FF0000;
+	color: white;
+}
+</Style>
+
+  <body>
+	<div id="run">
+		<center> <h1> LED CONTROL </h1> </center>
+		<form action="/cgi-bin/on" method="post">
+			<center> <input type="submit" value="LED ON" class=button1 onclick="./on"></center>
+		</form>
+		<form action="/cgi-bin/off" method="post">
+			<center> <input type="submit" value="LED OFF" class=button2 onclick="./off"></center>
+		</form>
+	</div>
+  </body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+     <head>
+
+    </head>
+    <style type="text/css">
+
+
+body {  background-image:url('im1.jpg') ;
+        background-repeat: no-repeat;
+        background-attachment: fixed; 
+        background-size: 100% 100%;
+ }
+
+h1 {
+	color: white;
+	font-family:courier;
+} 
+
+button {
+	border: none;
+	color: white;
+	padding: 17px 32px;
+	text-align:center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 17px;
+        margin: 4px 2px;
+        cursor: pointer;
+}
+
+
+
+.button1 {
+	  background-color: transparent ; 
+	  color: #4CAF50;
+	  border: 2px solid white;
+}
+
+
+.ausgabe {
+          color: white;          
+}
+
+
+.button1:hover {
+	  background-color: #4CAF50;
+	  color: white;
+}
+
+.button2 {
+	  background-color: transparent ;
+	  color: #FF0000;
+	  border: 2px solid white;
+}
+
+.button2:hover {
+	  background-color: #FF0000;
+	  color: white;
+}
+    </style>
+
+    <body>
+	    <div>
+            <center> <h1> LED CONTROL </h1></center>
+	    <center><button type="button" class="button1" onclick="loadDoc()">ON</button></center>
+	    <center><button type="button" class="button2" onclick="loadDoc2()">OFF</button></center>
+            </div>
+<center>
+<div class="ausgabe" id="run">
+</div>
+</center>
+<script>
+
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("run").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "/cgi-bin/an", true);
+  xhttp.send();
+}
+
+function loadDoc2() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("run").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "/cgi-bin/aus", true);
+  xhttp.send();
+}
+
+</script>
+		    
+    </body>
+</html>

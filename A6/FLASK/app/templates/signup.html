@@ -1,0 +1,65 @@
+<html>
+<head>
+  <title> Sign Up </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" integrity="undefined" crossorigin="anonymous">
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="undefined" crossorigin="anonymous"></script>
+<style>
+html {
+   	 height: 100%;
+}
+body {
+	background-color: #2F4F4F;
+    	min-height: 100%;
+}
+h3 {
+	color: white;
+}
+</style>
+</head>
+<body>
+  <div class="column is-4 is-offset-4">	
+		<h3>Sign Up</h3>
+  	
+	<div class="box">
+		{% with messages = get_flashed_messages() %}
+		{% if messages %}
+    			<div class="notification is-danger">
+        			{{ messages[0] }}
+    			</div>
+		{% endif %}
+		{% endwith %}
+
+		<form id="signup" action="{{ url_for('signup')}}" method="post">
+			<div class="field">
+				<div class="control">
+					<label for "username">Username:</label><br>
+					<input class="input is-large" type="text" id="username" name="username" placeholder="Your Username"<br><br>
+				</div>
+			</div>
+
+			<div class="field">
+				<div class="control">
+					<label for "password">Password:</label><br>
+					<input class="input is-large" type="password" id="password" name="password" placeholder="Your Password"<br><br><br>
+				</div>
+			</div>
+
+			<div class="field">
+				<label class="checkbox">
+					<input type="checkbox">
+					Remember me
+				</label>
+			</div>
+
+			<input type="submit" class="button is-block is-success is-light is-large is-fullwidth" value="Sign Up"</input><br>
+
+			<a href="{{ url_for('login')}}">
+				<button type="button" class="button is-block is-success is-light is-large is-fullwidth">Login</button>
+			</a>
+
+		</form>
+	</div>
+</div>
+</body>
+</html>
